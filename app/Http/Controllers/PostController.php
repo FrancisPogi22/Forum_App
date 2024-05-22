@@ -36,7 +36,7 @@ class PostController extends Controller
     {
         $comments = Comment::select('comments.*', 'users.name')
             ->join('users', 'users.id', '=', 'comments.user_id')
-            ->where('post_id', 1)
+            ->where('post_id', $post->id)
             ->get();
 
         return view("posts.show", ["post" => $post, "comments" => $comments]);
