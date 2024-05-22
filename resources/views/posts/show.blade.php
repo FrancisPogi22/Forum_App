@@ -4,14 +4,14 @@
         <div class="flex justify-end">
             @can('update', $post)
                 <a href="{{ route('posts.edit', $post->id) }}"
-                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900">Edit</a>
+                    class="focus:outline-none text-white bg-indigo-500 hover:bg-indigo-700 transition-colors focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900">Edit</a>
             @endcan
             @can('delete', $post)
                 <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit"
-                        class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
+                        class="focus:outline-none text-white bg-red-700 hover:bg-red-800 transition-colors focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
                 </form>
             @endcan
         </div>
@@ -30,7 +30,7 @@
                         <div class="btn-con flex">
                             @can('update', $comment)
                                 <a href="{{ route('comments.edit', $comment->id) }}"
-                                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900">Edit</a>
+                                    class="focus:outline-none text-white bg-indigo-500 hover:bg-indigo-700 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900">Edit</a>
                             @endcan
                             @can('delete', $comment)
                                 <form action="{{ route('comments.destroy', $comment->id) }}" method="POST">
@@ -45,17 +45,17 @@
                 @endforeach
             </div>
             <div class="comment-input-con">
-                <form action="{{ route('comments.store') }}" method="POST" class="flex items-center">
+                <form action="{{ route('comments.store') }}" method="POST" class="flex relative items-center">
                     @csrf
                     <input type="number" name="post_id" value="{{ $post->id }}" hidden>
                     <input
-                        type="text"class="@error('comment') border-red-500 @enderror border-2 border-sky-500 rounded-full p-2 w-full"
-                        name="comment" placeholder="Comment here" required>
+                        type="text"class="@error('comment') border-red-500 @enderror border-2 border-indigo-500 rounded-full p-3 w-full"
+                        name="comment" placeholder="Comment here..." required>
                     @error('comment')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                     <button type="submit"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Comment</button>
+                        class="text-white absolute right-2 bg-indigo-500 hover:bg-blue-800 transition-colors focus:outline-none focus:ring-4 focus:ring-indigo-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Comment</button>
                 </form>
             </div>
         </main>

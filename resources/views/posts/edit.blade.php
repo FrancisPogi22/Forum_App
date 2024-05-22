@@ -1,6 +1,6 @@
 <x-layout>
-    <h1 class="text-3xl font-bold mt-4">Post Edit Page</h1>
-    <div class="max-w-2xl mx-auto p-4 bg-slate-200 rounded-lg">
+    <h1 class="text-3xl font-bold mt-4 text-center">Edit Post</h1>
+    <div class="max-w-2xl mx-auto p-4 bg-slate-200 rounded-lg drop-shadow-lg mt-4">
         <form action="{{ route('posts.update', $post->id) }}" method="POST">
             @csrf
             @method('PUT')
@@ -26,7 +26,7 @@
             </div>
             <div class="mb-6">
                 <button type="submit"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Update</button>
+                    class="text-white bg-indigo-500 hover:bg-indigo-700 transition-colors focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Update</button>
             </div>
         </form>
     </div>
