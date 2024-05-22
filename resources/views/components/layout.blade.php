@@ -9,14 +9,11 @@
     <title>Forum App</title>
 </head>
 
-<body class="bg-slate-100">
+<body class="bg-indigo-50">
     <x-navbar />
     <div class="max-w-6xl mx-auto">
         {{ $slot }}
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
 
 </html>
